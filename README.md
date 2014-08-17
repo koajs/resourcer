@@ -3,6 +3,10 @@
 
 A simple resource directory mounter for [koa](http://koajs.com).
 
+[![Build Status](https://travis-ci.org/pebble/koa-resourcer.svg?branch=master)](https://travis-ci.org/pebble/koa-resourcer)
+[![Coverage Status](https://img.shields.io/coveralls/pebble/koa-resourcer.svg)](https://coveralls.io/r/pebble/koa-resourcer)
+[![npm](http://img.shields.io/npm/v/koa-resourcer.svg)](https://www.npmjs.org/package/koa-resourcer)
+
 ```js
 var koa = require('koa');
 var resource = require('koa-resourcer');
