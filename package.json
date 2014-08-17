@@ -1,0 +1,28 @@
+{
+  "name": "koa-resourcer",
+  "version": "1.0.0",
+  "description": "A simple resource directory mounter for koa.",
+  "main": "resourcer.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "koa",
+    "resource",
+    "api",
+    "directory",
+    "mount"
+  ],
+  "author": "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "1.0.4",
+    "koa-mount": "1.3.0"
+  },
+  "devDependencies": {
+    "istanbul-harmony": "^0.2.9",
+    "koa": "^0.10.0",
+    "mocha": "^1.21.4",
+    "supertest": "^0.13.0"
+  }
+}
