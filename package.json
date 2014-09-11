@@ -24,5 +24,13 @@
     "koa": "^0.10.0",
     "mocha": "^1.21.4",
     "supertest": "^0.13.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/pebble/koa-resourcer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pebble/koa-resourcer.git"
+  },
+  "homepage": "https://github.com/pebble/koa-resourcer"
 }
