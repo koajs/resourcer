@@ -1,6 +1,6 @@
 {
   "name": "koa-resourcer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple resource directory mounter for koa.",
   "main": "resourcer.js",
   "scripts": {
