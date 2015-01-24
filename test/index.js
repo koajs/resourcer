@@ -60,4 +60,14 @@ describe('koa-resourcer', function() {
     test(app).get('/users')
     .expect('my nested server', done)
   });
+
+  it('supports apps in the top level directory', function(done) {
+    var path = join(__dirname, 'top-level-resource');
+
+    resource(koa(), path, function(o) {
+      assert.equal('/', o.path);
+    });
+
+    done();
+  });
 });

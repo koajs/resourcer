@@ -26,7 +26,7 @@ module.exports = function koaResourcer(app, dir, fn) {
 
   function walk(fulldirname, prefix) {
     var contents = fs.readdirSync(fulldirname);
-    var config = getConfig(contents, fulldirname);
+    var config = getConfig(contents, fulldirname, undefined !== prefix);
 
     if (config && config.source) {
       return handleApp(config, fulldirname, prefix);
@@ -50,12 +50,17 @@ module.exports = function koaResourcer(app, dir, fn) {
     });
   }
 
-  function getConfig(contents, dir) {
+  function getConfig(contents, dir, nested) {
     if (~contents.indexOf('config.json')) {
       var path = join(dir, 'config.json');
       var config = require(path);
 
-      if (config && config.path) {
+      // In nested directories, we allow overridding the directory
+      // name to provide custom paths. If a user specifies "/" in
+      // a nested directory, it means "use the directory name" but
+      // at the top level directory, "/" means a literal "/".
+
+      if (nested && config && config.path) {
         config.path = config.path.replace(/^\/+/, '');
       }
 
@@ -67,10 +72,20 @@ module.exports = function koaResourcer(app, dir, fn) {
     assert(config.source, 'missing config.source');
 
     var source = join(fulldirname, config.source);
-    debug('requiring source', source)
     var resource = require(source);
 
-    var route = prefix + '/' + (config.path || basename(fulldirname));
+    var suffix = config.path || basename(fulldirname);
+
+    var route;
+    if (prefix) {
+      route = prefix + '/' + suffix;
+    } else if ('/' == suffix.charAt(0)) {
+      route = suffix;
+    } else {
+      route = '/' + suffix;
+    }
+
+    debug('mounting %s => %s', route, source)
     app.use(mount(route, resource));
 
     fn({ path: route, resource: resource });
