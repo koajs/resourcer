@@ -1,10 +1,10 @@
 
-# koa-resourcer
+# resourcer
 
 A simple resource directory mounter for [koa](http://koajs.com).
 
-[![Build Status](https://travis-ci.org/pebble/koa-resourcer.svg?branch=master)](https://travis-ci.org/pebble/koa-resourcer)
-[![Coverage Status](https://img.shields.io/coveralls/pebble/koa-resourcer.svg)](https://coveralls.io/r/pebble/koa-resourcer)
+[![Build Status](https://travis-ci.org/koajs/resourcer.svg?branch=master)](https://travis-ci.org/koajs/resourcer)
+[![Coverage Status](https://img.shields.io/coveralls/koajs/resourcer.svg)](https://coveralls.io/r/koajs/resourcer)
 [![npm](http://img.shields.io/npm/v/koa-resourcer.svg)](https://www.npmjs.org/package/koa-resourcer)
 
 ```js
@@ -161,8 +161,8 @@ DEBUG=koa-resourcer* npm test
 
 ## Sponsored by
 
-[Pebble Technology!](https://getpebble.com)
+[Pebble Technology!](https://www.pebble.com)
 
 ## License
 
-[MIT](https://github.com/pebble/koa-resourcer/blob/master/LICENSE)
+[MIT](https://github.com/koajs/resourcer/blob/master/LICENSE)
